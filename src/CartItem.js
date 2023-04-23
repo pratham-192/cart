@@ -1,17 +1,18 @@
 import React from "react";
 import { AiOutlineMinusCircle, AiFillPlusCircle, AiFillDelete } from 'react-icons/ai';
 class CartItem extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            title: "mobile",
-            price: 99999,
-            qty: 1,
-            img: ''
-        }
-        //binding so that the reference(this) is saved (see video for clarity)
-        this.increaseQuantity = this.increaseQuantity.bind(this);
-    }
+    //not required as we are getting data from 'props'
+    // constructor() {
+    //     super();
+    //     this.state = {
+    //         title: "mobile",
+    //         price: 99999,
+    //         qty: 1,
+    //         img: ''
+    //     }
+    //     //binding so that the reference(this) is saved (see video for clarity)
+    //     this.increaseQuantity = this.increaseQuantity.bind(this);
+    // }
     increaseQuantity() {
         // console.log(this.state);
 
@@ -53,7 +54,7 @@ class CartItem extends React.Component {
             })
         }
         render(){
-            const { title, price, qty } = this.state;
+            const { title, price, qty } = this.props.product;
             return (
                 <div className="cart-item">
                     <div className="left-block">
